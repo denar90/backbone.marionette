@@ -284,7 +284,7 @@ const Region = MarionetteObject.extend({
   destroy: function(options) {
     this.reset(options);
     const destroy = MarionetteObject.prototype.destroy.apply(this, arguments);
-    delete this.view._parent;
+    delete this.currentView._parent;
     return destroy;
   }
 });
