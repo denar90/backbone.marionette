@@ -256,6 +256,7 @@ const ViewMixin = {
       }
       parent = parent._parent;
     }
+    return this;
   }
 };
 
