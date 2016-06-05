@@ -219,8 +219,10 @@ const Region = MarionetteObject.extend({
     if (!view._isDestroyed) {
       this._removeView(view, options);
     }
+
+    //delete view._parent;
+
     this.triggerMethod('empty', this, view);
-    delete view._parent;
     return this;
   },
 
@@ -281,7 +283,9 @@ const Region = MarionetteObject.extend({
 
   destroy: function(options) {
     this.reset(options);
-    return MarionetteObject.prototype.destroy.apply(this, arguments);
+    const destroy = MarionetteObject.prototype.destroy.apply(this, arguments);
+    delete this.view._parent;
+    return destroy;
   }
 });
 
