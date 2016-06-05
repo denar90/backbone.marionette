@@ -248,7 +248,7 @@ const ViewMixin = {
   // Walk the _parent tree until we find a view (if one exists).
   // Returns the parent view hierarchically closest to this view.
   _parentView() {
-    let parent = _.clone(this._parent);
+    let parent = this._parent;
 
     while (parent) {
       if (parent instanceof View) {

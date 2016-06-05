@@ -220,7 +220,7 @@ const Region = MarionetteObject.extend({
       this._removeView(view, options);
     }
 
-    delete view._parent;
+    //delete view._parent;
 
     this.triggerMethod('empty', this, view);
     return this;
