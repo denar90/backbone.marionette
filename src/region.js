@@ -220,7 +220,6 @@ const Region = MarionetteObject.extend({
       this._removeView(view, options);
     }
     this.triggerMethod('empty', this, view);
-    delete view._parent;
     return this;
   },
 
@@ -234,6 +233,7 @@ const Region = MarionetteObject.extend({
 
     if (view.destroy) {
       view.destroy();
+      delete view._parent;
     } else {
       destroyBackboneView(view);
     }
